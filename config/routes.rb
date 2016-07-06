@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     root to: "base#index"
+    resources :sites
   end
 
   namespace :admin do

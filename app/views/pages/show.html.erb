@@ -1,0 +1,10 @@
+<h1><%= @site.name %></h1>
+
+<% if @site.page %>
+  <p><%= @site.page.title %></p>
+  <p><%= link_to "Edit", edit_site_page_path(@site) %></p>
+  <p><%= link_to "Destroy", site_page_path(@site), :method => :delete %></p>
+<% else %>
+  <p>N/A</p>
+  <p><%= link_to "Add page", new_site_page_path(@site) %></p>
+<% end %>

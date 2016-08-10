@@ -51,5 +51,12 @@ RSpec.describe Api::SitesController, type: :request do
 
       expect(Site.find(1).name).to eq("aa")
     end
+
+    it "should" do
+
+      patch "/api/sites/1", :site => {:name => nil}
+
+      expect(response.status).to be(400)
+    end
   end
 end

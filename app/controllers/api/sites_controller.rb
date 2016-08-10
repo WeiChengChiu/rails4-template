@@ -34,14 +34,13 @@ module Api
 
     end
 
-    # def destroy
-    #   @site = Site.find( params[:id] )
-    #   if @site.destroy
-    #     render :json => { :message => "Successfully deleted" }
-    #   else
-    #     render :json => { :message => "Failed deleted" }
-    #   end
-    # end
+    def destroy
+      @site = Site.find( params[:id] )
+
+      @site.destroy
+
+      render :json => nil, :status => 200
+    end
 
     def site_params
       params.require(:site).permit(:name, :host, :subdomain, :data)
